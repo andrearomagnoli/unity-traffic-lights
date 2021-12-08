@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebaeeb87e8b6c84b943d0e6c76391b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 600
+  speed: 580
   groundedTimer: 2
   groundMask:
     serializedVersion: 2

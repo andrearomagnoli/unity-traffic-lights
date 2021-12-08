@@ -25,6 +25,10 @@ public class VehicleSpawner : MonoBehaviour
     [Tooltip("Minimum time delta allowed for vehicle generation.")]
     private float timeRangeMinimum;
 
+    [SerializeField]
+    [Tooltip("Starting speed.")]
+    private float startingSpeed;
+
     private List<Transform> _spawnPoints;
 
     private float _timerReduce;
@@ -83,7 +87,8 @@ public class VehicleSpawner : MonoBehaviour
         int randVehicle = Random.Range(0, vehicles.Length);
         int randTransform = Random.Range(0, _spawnPoints.Count);
 
-        Instantiate(vehicles[randVehicle], _spawnPoints[randTransform]);
+        GameObject newVehicle = Instantiate(vehicles[randVehicle], _spawnPoints[randTransform]);
+        newVehicle.GetComponent<Rigidbody>().velocity = new Vector3(startingSpeed, 0f, 0f);
     }
 
     #endregion
