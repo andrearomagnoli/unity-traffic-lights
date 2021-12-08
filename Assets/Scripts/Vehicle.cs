@@ -8,21 +8,21 @@ public class Vehicle : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Speed of the vehicle.")]
-    private float speed = 100f;
+    protected float speed = 100f;
 
     [SerializeField]
     [Tooltip("Timer after which, if still not grounded, will be destroyed.")]
-    private float groundedTimer = 1f;
+    protected float groundedTimer = 1f;
 
     [SerializeField]
     [Tooltip("Layer that determines what is ground.")]
-    private LayerMask groundMask;
+    protected LayerMask groundMask;
 
     protected Rigidbody _rigidbody;
     protected bool _canMove;
 
-    private float _destroyTimer;
-    private bool _isDestroyTimerRunning;
+    protected float _destroyTimer;
+    protected bool _isDestroyTimerRunning;
 
     #endregion
 
@@ -35,7 +35,7 @@ public class Vehicle : MonoBehaviour
         _isDestroyTimerRunning = true;
     }
 
-    protected void Start()
+    private void Start()
     {
         _canMove = true;
     }
