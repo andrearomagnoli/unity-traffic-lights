@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8651744026967241623}
-  - component: {fileID: 6257380292871077969}
   - component: {fileID: 6676293237435155611}
+  - component: {fileID: 7309408358664333630}
+  - component: {fileID: 1380974892}
   m_Layer: 6
   m_Name: VehicleTruck
   m_TagString: Untagged
@@ -34,19 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6257380292871077969
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767960029121375719}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.31, y: 1.31, z: 2.74}
-  m_Center: {x: 0, y: 0.69, z: 0}
 --- !u!54 &6676293237435155611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60,9 +48,39 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
+  m_Interpolate: 0
+  m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &7309408358664333630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767960029121375719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebaeeb87e8b6c84b943d0e6c76391b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 500
+  groundedTimer: 2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!65 &1380974892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767960029121375719}
+  m_Material: {fileID: 13400000, guid: b8e8d0763cacf434786563f3c29c85ad, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4948211, y: 1.2934403, z: 2.7721503}
+  m_Center: {x: 0, y: 0.6875713, z: -0.0057536364}
 --- !u!1001 &4105339808614585738
 PrefabInstance:
   m_ObjectHideFlags: 0
