@@ -5,8 +5,8 @@ public class PlayerSpawner : MonoBehaviour
     #region Parameters
 
     [SerializeField]
-    [Tooltip("Player's vehicle.")]
-    private GameObject vehicle;
+    [Tooltip("Player's vehicles pool (one is randomly picked).")]
+    private GameObject[] vehicles;
 
     [SerializeField]
     [Tooltip("Starting position of the player.")]
@@ -23,7 +23,7 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Awake()
     {
-        Instantiate(vehicle, startingPosition);
+        Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
     }
 
     #endregion
@@ -34,7 +34,7 @@ public class PlayerSpawner : MonoBehaviour
         if ((playerMask.value & (1 << other.gameObject.layer)) > 0)
         {
             Destroy(other.gameObject);
-            Instantiate(vehicle, startingPosition);
+            Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
         }
     }
 

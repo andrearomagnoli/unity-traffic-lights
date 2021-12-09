@@ -882,7 +882,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7593c96abd9981e47b8b3811756d6f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 4655511718457281746, guid: 91710e014afc87946b66fb09d5439b35, type: 3}
+  vehicles:
+  - {fileID: 4816581575999766621, guid: 0cb8a585839ccb944ab8da61b2f3f416, type: 3}
+  - {fileID: 4655511718457281746, guid: 91710e014afc87946b66fb09d5439b35, type: 3}
+  - {fileID: 5260184551195019763, guid: 3c7179daddbd43f40b2e57310b6b4d42, type: 3}
+  - {fileID: 8745735461385156195, guid: 156a4317d1218fe46956ad5ff253d49c, type: 3}
+  - {fileID: 7056150800660165615, guid: 10bd542695b2fcb4bb6b6057da06eb98, type: 3}
   startingPosition: {fileID: 697821148}
   playerMask:
     serializedVersion: 2
