@@ -4,9 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class CanvasMainMenu : MonoBehaviour
 {
+    #region Parameters
+
     [SerializeField]
     [Tooltip("Text that is updated.")]
     private TMP_Text scoreText;
+
+    #endregion
+
+    #region UnityEvents
 
     private void Start()
     {
@@ -36,4 +42,6 @@ public class CanvasMainMenu : MonoBehaviour
             SceneManager.LoadScene("Game");
         }
     }
+
+    #endregion
 }

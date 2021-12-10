@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class GameStatus : MonoBehaviour
 {
+    #region Parameters
+
     public static GameStatus Instance;
 
-    public int Score = 0;
+    public int Score { get; private set; } = 0;
+
+    #endregion
+
+    #region UnityEvents
 
     private void Awake()
     {
@@ -17,4 +23,26 @@ public class GameStatus : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    #endregion
+
+    #region Methods
+
+    /// <summary>
+    /// Reset the score;
+    /// </summary>
+    public void ScoreReset()
+    {
+        Score = 0;
+    }
+
+    /// <summary>
+    /// Increase the score by one unit.
+    /// </summary>
+    public void ScoreIncrease()
+    {
+        Score++;
+    }
+
+    #endregion
 }

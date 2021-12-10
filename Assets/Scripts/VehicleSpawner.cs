@@ -72,16 +72,25 @@ public class VehicleSpawner : MonoBehaviour
 
     #region Methods
 
+    /// <summary>
+    /// Reset timer for reducing generation delay.
+    /// </summary>
     private void ResetTimerReduce()
     {
         _timerReduce = timeRangeDecreaseDelay;
     }
     
+    /// <summary>
+    /// Reset timer for vehicle generation.
+    /// </summary>
     private void ResetTimerGenerate()
     {
         _timerGenerate = Mathf.Clamp(Random.Range(timeRange.x, timeRange.y) - timeRangeDecreaseAmount * _timeRangeDecreaseAmountCounter, timeRangeMinimum, Mathf.Infinity);
     }
 
+    /// <summary>
+    /// Generate a random vehicle.
+    /// </summary>
     private void GenerateVehicle()
     {
         int randVehicle = Random.Range(0, vehicles.Length);

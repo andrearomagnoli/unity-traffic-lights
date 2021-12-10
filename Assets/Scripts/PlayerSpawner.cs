@@ -25,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (GameStatus.Instance != null)
         {
-            GameStatus.Instance.Score = 0;
+            GameStatus.Instance.ScoreReset();
         }
         Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
     }
@@ -39,7 +39,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             if (GameStatus.Instance != null)
             {
-                GameStatus.Instance.Score++;
+                GameStatus.Instance.ScoreIncrease();
             }
             Destroy(other.gameObject);
             Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
