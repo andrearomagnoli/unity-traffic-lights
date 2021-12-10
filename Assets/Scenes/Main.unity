@@ -234,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450922e181587a44288d36dd5125d7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
 --- !u!1 &801169791
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +630,14 @@ MonoBehaviour:
   m_text: 'Traffic Lights
 
 
-    <Press SPACE or tap to start>'
+    Are you going to get through the crossroad?
+
+    Use
+    SPACE or tap your screen to start your vehicle.
+
+
+    <Press SPACE or tap to
+    start>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
