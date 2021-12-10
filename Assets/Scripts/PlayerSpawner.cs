@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
@@ -12,10 +13,13 @@ public class PlayerSpawner : MonoBehaviour
     [Tooltip("Starting position of the player.")]
     private Transform startingPosition;
 
+    [SerializeField]
+    [Tooltip("Text that display the player's score.")]
+    private TMP_Text textScore;
 
     [SerializeField]
     [Tooltip("Layer that determines what is a player.")]
-    protected LayerMask playerMask;
+    private LayerMask playerMask;
 
     #endregion
 
@@ -40,6 +44,7 @@ public class PlayerSpawner : MonoBehaviour
             if (GameStatus.Instance != null)
             {
                 GameStatus.Instance.ScoreIncrease();
+                textScore.text = $"Score:\n{GameStatus.Instance.Score}";
             }
             Destroy(other.gameObject);
             Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
