@@ -20,8 +20,19 @@ public class Player : Vehicle
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                _canMove = true;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
             _canMove = true;
+        }
     }
 
     #endregion
@@ -37,7 +48,7 @@ public class Player : Vehicle
 
         if ((vehiclesMask.value & (1 << collision.gameObject.layer)) > 0)
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Main");
         }
     }
 

@@ -23,6 +23,10 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Awake()
     {
+        if (GameStatus.Instance != null)
+        {
+            GameStatus.Instance.Score = 0;
+        }
         Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
     }
 
@@ -33,6 +37,10 @@ public class PlayerSpawner : MonoBehaviour
     {
         if ((playerMask.value & (1 << other.gameObject.layer)) > 0)
         {
+            if (GameStatus.Instance != null)
+            {
+                GameStatus.Instance.Score++;
+            }
             Destroy(other.gameObject);
             Instantiate(vehicles[Random.Range(0, vehicles.Length)], startingPosition);
         }
