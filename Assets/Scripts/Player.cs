@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// INHERITANCE
 public class Player : Vehicle
 {
     #region
@@ -39,7 +40,7 @@ public class Player : Vehicle
 
     #region Callbacks
 
-    protected void OnCollisionEnter(Collision collision)
+    protected new void OnCollisionEnter(Collision collision)
     {
         if ((groundMask.value & (1 << collision.gameObject.layer)) > 0)
         {
@@ -52,7 +53,7 @@ public class Player : Vehicle
         }
     }
 
-    protected void OnCollisionExit(Collision collision)
+    protected new void OnCollisionExit(Collision collision)
     {
         if ((groundMask.value & (1 << collision.gameObject.layer)) > 0)
         {
