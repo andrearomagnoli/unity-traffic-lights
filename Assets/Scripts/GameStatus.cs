@@ -6,6 +6,7 @@ public class GameStatus : MonoBehaviour
 
     public static GameStatus Instance;
 
+    // ENCAPSULATION
     public int Score { get; private set; } = 0;
 
     #endregion

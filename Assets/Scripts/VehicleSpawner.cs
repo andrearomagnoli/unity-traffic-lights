@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class VehicleSpawner : MonoBehaviour
@@ -72,6 +73,7 @@ public class VehicleSpawner : MonoBehaviour
 
     #region Methods
 
+    // ABSTRACTION
     /// <summary>
     /// Reset timer for reducing generation delay.
     /// </summary>
@@ -79,7 +81,8 @@ public class VehicleSpawner : MonoBehaviour
     {
         _timerReduce = timeRangeDecreaseDelay;
     }
-    
+
+    // ABSTRACTION
     /// <summary>
     /// Reset timer for vehicle generation.
     /// </summary>
@@ -88,6 +91,8 @@ public class VehicleSpawner : MonoBehaviour
         _timerGenerate = Mathf.Clamp(Random.Range(timeRange.x, timeRange.y) - timeRangeDecreaseAmount * _timeRangeDecreaseAmountCounter, timeRangeMinimum, Mathf.Infinity);
     }
 
+    // ABSTRACTION
+    // POLYMORPHISM
     /// <summary>
     /// Generate a random vehicle.
     /// </summary>
@@ -97,6 +102,23 @@ public class VehicleSpawner : MonoBehaviour
         int randTransform = Random.Range(0, _spawnPoints.Count);
 
         GameObject newVehicle = Instantiate(vehicles[randVehicle], _spawnPoints[randTransform]);
+        newVehicle.GetComponent<Rigidbody>().velocity = new Vector3(startingSpeed, 0f, 0f);
+    }
+
+    // ABSTRACTION
+    // POLYMORPHISM
+    /// <summary>
+    /// Generate a specific vehicle.
+    /// </summary>
+    private void GenerateVehicle(int vehicleNumber)
+    {
+        if (vehicleNumber < 0 || vehicle > vehicles.Length)
+        {
+            throw new Exception("Vehicle number is out of range");
+        }
+        int randTransform = Random.Range(0, _spawnPoints.Count);
+
+        GameObject newVehicle = Instantiate(vehicles[vehicleNumber], _spawnPoints[randTransform]);
         newVehicle.GetComponent<Rigidbody>().velocity = new Vector3(startingSpeed, 0f, 0f);
     }
 

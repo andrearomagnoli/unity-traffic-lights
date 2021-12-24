@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// INHERITANCE
 public class Player : Vehicle
 {
     #region
