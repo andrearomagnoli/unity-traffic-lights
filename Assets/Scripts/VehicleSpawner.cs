@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class VehicleSpawner : MonoBehaviour
 {
@@ -112,7 +113,7 @@ public class VehicleSpawner : MonoBehaviour
     /// </summary>
     private void GenerateVehicle(int vehicleNumber)
     {
-        if (vehicleNumber < 0 || vehicle > vehicles.Length)
+        if (vehicleNumber < 0 || vehicleNumber > vehicles.Length)
         {
             throw new Exception("Vehicle number is out of range");
         }
